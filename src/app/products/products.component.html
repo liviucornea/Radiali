@@ -2,13 +2,10 @@
     <h1>{{"PRODUCTS.TITLE" | translate}}</h1>
     <h3>Lista produse:</h3>
     <div class="search">
-        <mat-form-field class="example-form-field">
-            <mat-label>Cauta produsul in tabela</mat-label>
+        <mat-form-field>
+            <mat-label>Cauta in lista the produse: </mat-label>
             <input matInput type="text" [(ngModel)]="forProdSearch" (input)="searchProduct()">
-            <button mat-button *ngIf="forProdSearch" matSuffix mat-icon-button aria-label="Clear" 
-            (click)="forProdSearch='';searchProduct()">
-              <mat-icon>close</mat-icon>
-            </button>
+            <mat-icon matSuffix mat-icon-button  *ngIf="forProdSearch" (click)="forProdSearch='';searchProduct()">close</mat-icon>
           </mat-form-field>
     </div>
     <hr>
