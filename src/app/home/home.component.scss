@@ -7,3 +7,30 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.content {
+  margin: 0px auto 32px;
+  padding: 0 16px;
+  //max-width: 1200px;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cell {
+  width: 50%;
+}
+.with-image {
+  text-align: center;
+}
