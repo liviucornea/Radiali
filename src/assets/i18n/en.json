@@ -1,6 +1,33 @@
 {
     "HOME": {
-      "TITLE": "Wellcome Radiali",
-      "SELECT": "Change language"
+      "TITLE": "Radiali",
+      "SELECT": "Change language",
+      "SUB-TITLE": "Welcome to the Radiali website.",
+      "MAIN-MSG": "We hope you find useful information for you. We are at your disposal with rubber tracks for almost any type of mini excavator on the market. We can also supply elements of the drive train, such as: traction rollers, tensioners and support rollers. If necessary, do not hesitate to contact us, we will be happy to answer your questions as soon as possible."
+    },
+    "MAIN-MENU": {
+      "HOME": "Home",
+      "ABOUT": "About",
+      "SERVICES": "Services"
+     },
+    "SERVICES": {
+      "TITLE": "Service",
+      "SUB-TITLE1": "Maintenance of running track elements",
+      "MSG1": "If the running track elements (eg rollers, tensioner, gear) start to wear out, replace them promptly. If the teeth on the traction wheel are worn, they can remove the metal traction parts from the tracks, and the worn rollers can cut the running area of the track, causing serious damage. In addition, it is important to use a pressure washer to clean the runway. Failure to wash can damage the recoil mechanisms, which can break the steel cables in the track. We hope you find useful information for you. We are at your disposal with rubber tracks for almost any type of mini excavator on the market. We can also supply elements of the drive train, such as: traction rollers, tensioners and support rollers. If necessary, do not hesitate to contact us, we will be happy to answer your questions as soon as possible.",
+      "SUB-TITLE2": "Avoid excessive stretching of the tracks",
+      "MSG2": "Always consult the manufacturer's manual for proper track tension, as machines of different sizes require different tension voltages! Check the voltage in the track every week. While some people believe that maintaining high blood pressure in the track will make it last longer, the result will be exactly the opposite! Some flexibility is required or the senile will react similarly to an over-inflated tire. In contrast, rubber tracks that are too weak can damage the parts around the track, the track can jump off the tensioner.",
+      "SUB-TITLE3": "Work surface",
+      "MSG3": "Remember that while rubber tracks will not pierce, like pneumatic tires, sharp objects should still be avoided! Sharp stones, pieces of crushed concrete, sharp metal objects can cause the rubber tracks to be cut, reducing the effectiveness of the track and, finally, the inner steel cables rusting on contact with water and can break. When it comes to aggressive / heavy terrain, steel tracks can be a better option.",
+      "SUB-TITLE4": "Avoid contamination",
+      "MSG4": "Chemicals, oil, salt, and other corrosive substances can damage the rubber. Avoid these items if possible. Also, beware of oil and grease that may leak from the car onto the rubber tracks. If the rubber tracks are exposed to contact with any of these items, clean them immediately.",
+      "SUB-TITLE5": "",
+      "MSG5": "",
+      "SUB-TITLE6": "",
+      "MSG6": "",
+      "SUB-TITLE7": "",
+      "MSG7": ""
+    },
+    "FOOTER": {
+      "LINK": "Important links"
     }
   }

@@ -1,6 +1,34 @@
 {
     "HOME": {
-      "TITLE": "Radiali va spune: Bine ati venit! ",
-      "SELECT": "Selectati limba"
+      "TITLE": "Radiali, o companie de incredere",
+      "SELECT": "Selectati limba",
+      "SUB-TITLE": "Bine ati venit pe site-ul companiei Radiali.",
+      "MAIN-MSG": "Speram sa gasiti informatii utile pentru dvs. Va stam la dispozitie cu senile de cauciuc pentru aproape orice tip de miniexcavator existent pe piata. De asemenea, va putem furniza si elemente din trenul de antrenare, cum ar fi : role de tractiune, intinzatoare si role de sustinere. Daca este necesar, nu ezitati sa ne contactati, vom fi bucurosi sa va raspundem la intrebarile dvs., in cel mai scurt timp."
+    },
+    "MAIN-MENU": {
+      "HOME": "Acasa",
+      "ABOUT": "Despre noi",
+      "SERVICES": "Servicii"
+     },
+
+    "SERVICES": {
+      "TITLE": "Servicii",
+      "SUB-TITLE1": "Intretinerea elementelor din calea de rulare",
+      "MSG1": "Dacă elementele caii de rulare (ex. role, intinzator, roata dintata) încep să se uzeze, înlocuiți-le prompt. Daca dinții de la rota de tractiune sunt uzati, pot scoate piesele metalice de tractiune din șenile, iar rolele uzate pot tăia zona de rulare a senilei, provocând pagube grave. În plus, este important să folosiți o mașină de spălat sub presiune pentru a curăța calea de rulare. Neglijarea spălării poate duce la defectarea mecanismelor de recul, ceea ce poate duce la ruperea cablurilor de otel din senila. Speram sa gasiti informatii utile pentru dvs. Va stam la dispozitie cu senile de cauciuc pentru aproape orice tip de miniexcavator existent pe piata. De asemenea, va putem furniza si elemente din trenul de antrenare, cum ar fi : role de tractiune, intinzatoare si role de sustinere. Daca este necesar, nu ezitati sa ne contactati, vom fi bucurosi sa va raspundem la intrebarile dvs., in cel mai scurt timp.",
+      "SUB-TITLE2": "Evitați intinderea excesiva a senilelor",
+      "MSG2": "Consultați întotdeauna manualul producatorului pentru o intindere corespunzătoare a senilelor, deoarece mașinile de dimensiuni diferite necesită tensiuni de intindere diferite ! Verificați tensiunea din senila în fiecare săptămână. În timp ce unii oameni consideră că menținerea tensiunii ridicate in senila, va face ca aceasta să dureze mai mult, rezultatul va fi exact opus ! Este necesară o anumită flexibilitate sau senila va reacționa în mod similar cu o anvelopă supra-umflată. În schimb, senilele de cauciuc care sunt prea slabe pot deteriora părțile de contact din jurul caii de rulare, senila poate sarii de pe intinzator.",
+      "SUB-TITLE3": "Suprafata de lucru",
+      "MSG3": "Remember that while rubber tracks will not pierce, like pneumatic tires, sharp objects should still be avoided! Sharp stones, pieces of crushed concrete, sharp metal objects can cause the rubber tracks to be cut, reducing the effectiveness of the track and, finally, the inner steel cables rusting on contact with water and can break. When it comes to aggressive / heavy terrain, steel tracks can be a better option.",
+      "SUB-TITLE4": "Evitați contaminarea",
+      "MSG4": "Produsele chimice, uleiul, sarea, precum și alte substanțe corozive pot determina deteriorarea cauciucului. Evitați aceste elemente dacă este posibil. De asemenea, aveți grijă de uleiul și vaselina care se pot scurge de pe mașină pe șenilele de cauciuc. Dacă senilele de cauciuc sunt expuse la contactul cu oricare dintre aceste elemente, curățați-le imediat.",
+      "SUB-TITLE5": "",
+      "MSG5": "",
+      "SUB-TITLE6": "",
+      "MSG6": "",
+      "SUB-TITLE7": "",
+      "MSG7": ""
+    },
+    "FOOTER": {
+      "LINK": "Link-uri utile"
     }
   }
