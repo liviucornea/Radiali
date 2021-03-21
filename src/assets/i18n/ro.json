@@ -8,7 +8,8 @@
     "MAIN-MENU": {
       "HOME": "Acasa",
       "ABOUT": "Despre noi",
-      "SERVICES": "Servicii"
+      "SERVICES": "Servicii",
+      "PRODUCTS": "Produse"
      },
      "ABOUT": {
       "TITLE": "Despre noi",
@@ -30,6 +31,9 @@
       "MSG6": "",
       "SUB-TITLE7": "",
       "MSG7": ""
+    },
+    "PRODUCTS": {
+      "TITLE": "Produse"
     },
     "FOOTER": {
       "LINK": "Link-uri utile"
