@@ -1,7 +1,7 @@
 <div class="content">
     <h1>{{"PRODUCTS.TITLE" | translate}}</h1>
-    <h3>Lista produse:</h3>
     <div class="search">
+    <h3>Lista produse:</h3>
         <mat-form-field>
             <mat-label>Cauta in lista the produse: </mat-label>
             <input matInput type="text" [(ngModel)]="forProdSearch" (input)="searchProduct()">
@@ -12,10 +12,8 @@
     <div class="card">
         <span *ngIf="noSearchResult">Nu sunt produse pentru cautarea aceasta</span>
         <table mat-table [dataSource]="dataSource" matSort *ngIf="!noSearchResult">
-
             <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-          
+                  The actual rendered columns are set as a property on the row definition" -->    
             <!-- Code Column -->
             <ng-container matColumnDef="code">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
