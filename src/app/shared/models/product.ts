@@ -1,9 +1,11 @@
 export class Product {
-   public code: string;
+   public produs_id: string;
+   public nume: string;
    public model: string;
-   public description: string;
+   public dimensiuni: string;
+   public description?: string;
    
-   constructor ( code: string) {
-       this.code = code;
+   constructor ( produs_id: string) {
+       this.produs_id = produs_id;
    }
 }

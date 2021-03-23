@@ -26,6 +26,8 @@ import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { reducersMap, metaReducers} from './store/reducers';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -62,6 +64,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatSortModule,
     MatInputModule,
     MatIconModule,
+    MatProgressSpinnerModule,
     StoreModule.forRoot(reducersMap, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
