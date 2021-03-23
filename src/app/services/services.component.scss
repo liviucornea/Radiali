@@ -14,22 +14,22 @@
   align-items: center;
 }
 
-.card {
+.row-rewerse-wrap {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row wrap-reverse;
+  align-items: stretch;
 }
 .row {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  // justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: stretch;
 }
 .cell {
-  width: 50%;
+  flex-grow: 2;
+  max-width: 900px;
 }
 .with-image {
-  text-align: center;
+  flex-grow: 1;
+  text-align: right;
 }
