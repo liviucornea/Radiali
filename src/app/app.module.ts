@@ -28,7 +28,8 @@ import { StoreModule } from '@ngrx/store';
 import { reducersMap, metaReducers} from './store/reducers';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProductsService } from './products/products.service';
-
+import { ProductsEditComponent } from './products-edit/products-edit.component';
+import {MatButtonModule} from '@angular/material/button';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +46,8 @@ export function createTranslateLoader(http: HttpClient) {
     HomeComponent,
     AboutComponent,
     ServicesComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsEditComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +70,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatInputModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
     StoreModule.forRoot(reducersMap, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({

@@ -13,6 +13,10 @@ import {
   map
 } from 'rxjs/operators';
 import { ProductsService } from './products.service';
+import { Router } from '@angular/router';
+import { AppState } from '../store/states/appStates';
+import { Store } from '@ngrx/store';
+import { loadProductsList } from '../store/actions/productsActions';
 
 async function fetchProductsJSON() {
   const response = await fetch('../../assets/produse.json');
@@ -37,32 +41,44 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
   isLoading = true;
   searchSubsc: Subscription;
   prodSubsc: Subscription;
-  constructor(public prodSvc: ProductsService) { }
+  storeSubsc: Subscription;
+  constructor(public prodSvc: ProductsService,
+    public store: Store<AppState>,
+    public router: Router) { }
 
   ngOnInit(): void {
      //this.productsList = products;
      this.displayedColumns = ['produs_id','nume', 'model', 'dimensiuni'];
      this.dataSource = new MatTableDataSource<Product>(this.productsList);
      this.prodSubsc = this.prodSvc.getProductsList().subscribe( list => {
+       this.store.dispatch(loadProductsList({list: list.data}));
        console.log('lis of products is', list);
      });
-    this.prodSvc.createProduct().subscribe( data => {
-        console.log('product is inserted');
-    }, error => { console.log(' error', error)});
-
+     this.dataSource.paginator = this.paginator;
+     this.dataSource.sort = this.sort;
+     this.storeSubsc = this.store.select('products').subscribe(
+      data => {
+        this.isLoading = false;
+          this.productsList = data.productsLis;
+          this.dataSource = new MatTableDataSource<Product>(this.productsList);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+      }
+    )
   }
   
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-    fetchProductsJSON().then(products => {
-      this.isLoading = false;
-      this.productsList = products;
-      this.dataSource = new MatTableDataSource<Product>(this.productsList);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
+    // fetchProductsJSON().then(products => {
+    //   this.isLoading = false;
+    //   this.productsList = products;
+    //   this.dataSource = new MatTableDataSource<Product>(this.productsList);
+    //   this.dataSource.paginator = this.paginator;
+    //   this.dataSource.sort = this.sort;
       
-    });
+    // });
+
     this.searchSubsc = fromEvent(document.getElementById('type-ahead'), 'keyup').pipe(
                         debounceTime(200),
                         map((e: any) => {
@@ -83,7 +99,7 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
         return;
       }
       const foundedProducts = this.productsList.filter(product => {
-       return  product.produs_id.toUpperCase().indexOf(searchFor) > -1 ||
+       return  product.produs_id.toString().toUpperCase().indexOf(searchFor) > -1 ||
        product.model.toUpperCase().indexOf(searchFor) > -1 ||
        product.nume.toUpperCase().indexOf(searchFor) > -1 ||
        product.dimensiuni.toUpperCase().indexOf(searchFor) > -1
@@ -103,7 +119,15 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.searchSubsc){
       this.searchSubsc.unsubscribe();
     }
+    if (this.storeSubsc) {
+      this.storeSubsc.unsubscribe();
+    }
+    if( this.prodSubsc){
+      this.prodSubsc.unsubscribe();
+    }
 
   }
-
+  navigateToEditProduct( productId: string) {
+    this.router.navigateByUrl("/edit-product/" + productId);
+  }
 }

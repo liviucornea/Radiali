@@ -3,10 +3,12 @@ import { AppState } from "../states/appStates";
 import { userReducer } from "./userReducer";
 import * as fromRouter from '@ngrx/router-store';
 import { environment } from '../../../environments/environment';
+import { productsReducer } from "./productsReducer";
 
 export const reducersMap: ActionReducerMap<AppState> = {
     router: fromRouter.routerReducer,
-    user: userReducer
+    user: userReducer,
+    products: productsReducer
  }
 
  export function logger(

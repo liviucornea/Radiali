@@ -1,6 +1,7 @@
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/internal/Observable";
+import { Product } from '../shared/models';
 
 @Injectable({
     providedIn: 'root'
@@ -28,10 +29,20 @@ import { Observable } from "rxjs/internal/Observable";
             })
           };
           const  product = {
-            "nume":"KUBOTA", "model":"KX 36","dimensiuni":"200x96x30 "
+            "nume":"KUBOTA", "model": "KX 36","dimensiuni": "200x96x30 ", "description" :"200x96x30 "
           };
         return this.http.post(this.baseUrl, product, httpOptions);
     }
-
+    
+    updateProduct(product: Product): Observable<any> {
+      const httpOptions = {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+          })
+        };
+        const  prod = Object.assign({}, product);
+        delete prod.produs_id;
+      return this.http.put(this.baseUrl + '/' + product.produs_id , prod, httpOptions);
+  }
 
     }

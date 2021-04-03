@@ -34,6 +34,9 @@
 }
 table {
   width: 100%;
+ td .navigate-cell {
+    cursor: pointer;
+  }
 }
 th.mat-sort-header-sorted {
   color: black;
