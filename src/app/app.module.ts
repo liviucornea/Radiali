@@ -30,6 +30,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProductsService } from './products/products.service';
 import { ProductsEditComponent } from './products-edit/products-edit.component';
 import {MatButtonModule} from '@angular/material/button';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,7 +48,8 @@ export function createTranslateLoader(http: HttpClient) {
     AboutComponent,
     ServicesComponent,
     ProductsComponent,
-    ProductsEditComponent
+    ProductsEditComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
