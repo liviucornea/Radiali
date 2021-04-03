@@ -12,6 +12,7 @@ import {
   distinctUntilChanged,
   map
 } from 'rxjs/operators';
+import { ProductsService } from './products.service';
 
 async function fetchProductsJSON() {
   const response = await fetch('../../assets/produse.json');
@@ -35,12 +36,19 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
   noSearchResult = false;
   isLoading = true;
   searchSubsc: Subscription;
-  constructor() { }
+  prodSubsc: Subscription;
+  constructor(public prodSvc: ProductsService) { }
 
   ngOnInit(): void {
      //this.productsList = products;
      this.displayedColumns = ['produs_id','nume', 'model', 'dimensiuni'];
      this.dataSource = new MatTableDataSource<Product>(this.productsList);
+     this.prodSubsc = this.prodSvc.getProductsList().subscribe( list => {
+       console.log('lis of products is', list);
+     });
+    this.prodSvc.createProduct().subscribe( data => {
+        console.log('product is inserted');
+    }, error => { console.log(' error', error)});
 
   }
   
