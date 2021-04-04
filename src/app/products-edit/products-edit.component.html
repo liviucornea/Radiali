@@ -1,8 +1,15 @@
 <form class="product-form"  [formGroup]="productForm">
+  <div class="spinner-container" *ngIf="isSaving">
+    <mat-progress-spinner class="spinner"
+    [color]="'primary'"
+    [mode]="'indeterminate'"
+    [value]="50">
+    </mat-progress-spinner>
+  </div>
     <div class="row">
         <mat-form-field class="product-half-width">
             <mat-label>Product  ID</mat-label>
-            <input matInput formControlName="produs_id" disabled>
+            <input matInput formControlName="produs_id">
           </mat-form-field>
           <mat-form-field class="product-half-width">
               <mat-label>Product  Name</mat-label>
@@ -30,10 +37,10 @@
           </mat-form-field>
     </div>
 
-    <hr>
+    <mat-divider></mat-divider>
     <div class="row-buttons">
-        <button mat-button (click)="doCancel()">Anuleaza</button>
-        <button mat-button color="primary" (click)="doSave()">Salveaza</button>
+      <button mat-raised-button color="accent" (click)="doCancel()">Inapoi</button>
+      <button mat-raised-button color="primary" (click)="doSave()">Salveaza</button>
     </div>
     <h3>{{message}}</h3>
   </form>

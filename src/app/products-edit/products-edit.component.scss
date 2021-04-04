@@ -11,6 +11,14 @@
   .product-half-width {
     max-width: 40%;
   }
+  .spinner-container {
+    display: flex;
+    .spinner {
+      align-self: center;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
   .row {
     display: flex;
     flex-direction: row;
@@ -18,6 +26,7 @@
     align-items: center;
   }
   .row-buttons {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

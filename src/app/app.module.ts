@@ -30,6 +30,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProductsService } from './products/products.service';
 import { ProductsEditComponent } from './products-edit/products-edit.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -73,6 +74,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatIconModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatDividerModule,
     StoreModule.forRoot(reducersMap, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({

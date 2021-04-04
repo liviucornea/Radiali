@@ -22,6 +22,7 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
   private prodSaveSubsc: Subscription;
   public productForm: FormGroup;
   public message = '';
+  isSaving = false;
 
   constructor(public prodSvc: ProductsService, private route: ActivatedRoute,
     public store: Store<AppState>, private fb: FormBuilder,
@@ -43,9 +44,9 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
 
   createProductReactiveForm(): FormGroup {
     return this.fb.group({
-      produs_id: ['', Validators.required],
-      nume: [''],
-      model: [''],
+      produs_id: new FormControl({value: '', disabled: true, }),
+      nume: ['', Validators.required],
+      model: ['', Validators.required],
       dimensiuni: [''],
       description: ['']
     });
@@ -65,14 +66,17 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
       }, error => { console.log(' error', error)});
   }
   doSave() {
+    this.isSaving = true;
     const prod = this.productForm.getRawValue() as Product;
     this.prodSaveSubsc =this.prodSvc.updateProduct(prod).subscribe(result=>{
       if(result.message) {
           this.message = "Produsul a fost salvat cu success";
       }
       console.log('Product is saved');
-    }, err =>{
+      this.isSaving = false;
+    }, err => {
       this.message = "Produsul nu poate fi salvat momentan. Incercati mai tirziu";
+      this.isSaving = false;
     })
   }
 
