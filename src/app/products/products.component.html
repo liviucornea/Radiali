@@ -25,7 +25,8 @@
             <!-- Code Column -->
             <ng-container matColumnDef="produs_id">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Produs Id </th>
-              <td mat-cell *matCellDef="let element" class="navigate-cell"
+              <td mat-cell *matCellDef="let element"
+              [ngClass]="{'navigate-cell': user.isLoggedIn}"
               (click)="navigateToEditProduct(element.produs_id)"
               > {{element.produs_id}} </td>
             </ng-container>
@@ -33,7 +34,8 @@
             <!-- Model Column -->
             <ng-container matColumnDef="model">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Model</th>
-              <td mat-cell *matCellDef="let element" class="navigate-cell"
+              <td mat-cell *matCellDef="let element"
+              [ngClass]="{'navigate-cell': user.isLoggedIn}"
               (click)="navigateToEditProduct(element.produs_id)"
               > {{element.model}} </td>
             </ng-container>
@@ -41,7 +43,8 @@
             <!-- Name Column -->
             <ng-container matColumnDef="nume">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Nume </th>
-              <td mat-cell *matCellDef="let element" class="navigate-cell"
+              <td mat-cell *matCellDef="let element"
+              [ngClass]="{'navigate-cell': user.isLoggedIn}"
               (click)="navigateToEditProduct(element.produs_id)"> {{element.nume}} </td>
             </ng-container>
             <ng-container matColumnDef="dimensiuni">

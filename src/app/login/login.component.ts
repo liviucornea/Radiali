@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.store.dispatch(userSessionStarted({user}));
       setTimeout(()=> {
         self.router.navigateByUrl('/products');
-      }, 3000);
+      }, 800);
       this.message = "Loginare reusita. Vei fi redirectat la lista de produse";
     }, err => {
       this.isLoading = false;

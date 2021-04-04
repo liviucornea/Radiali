@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Product } from '../shared/models';
+import { Product, User } from '../shared/models';
 //import { products } from '../../assets/produse';
 // import { products } from './productsMock';
 import { AfterViewInit } from '@angular/core';
@@ -42,6 +42,8 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
   searchSubsc: Subscription;
   prodSubsc: Subscription;
   storeSubsc: Subscription;
+  userSubs: Subscription;
+  user: User;
   constructor(public prodSvc: ProductsService,
     public store: Store<AppState>,
     public router: Router) { }
@@ -63,8 +65,8 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
           this.dataSource = new MatTableDataSource<Product>(this.productsList);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-      }
-    )
+      });
+      this.userSubs = this.store.select('user').subscribe( usr => this.user = usr);
   }
   
   ngAfterViewInit() {
@@ -125,9 +127,17 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
     if( this.prodSubsc){
       this.prodSubsc.unsubscribe();
     }
+    if (this.userSubs) {
+      this.userSubs.unsubscribe();
+    }
 
   }
   navigateToEditProduct( productId: string) {
-    this.router.navigateByUrl("/edit-product/" + productId);
+    if (this.user.isLoggedIn) {
+      this.router.navigateByUrl("/edit-product/" + productId);
+    } else {
+      this.router.navigateByUrl("/notFound" );
+    }
+    
   }
 }
