@@ -13,6 +13,9 @@ const reduceForUser = createReducer(
     user.isLoggingIn = true;
     return Object.assign({...userState}, user);
   }),
+  on(UserActions.userSessionStarted, (userState: UserState, action) => {
+    return Object.assign({...userState}, action.user);
+  }),
   on(UserActions.guestUserLoaded, (userState: UserState, action) => {
     userState = new User('GUEST');
     userState.isLoaded = true;

@@ -1,10 +1,11 @@
 export class User {
-    id: string;
+    user_id: string;
     firstName: string;
     lastName: string;
     isLoggedIn: boolean;
     isLoggingIn: boolean;
+    role: string;
     constructor( id: string) {
-        this.id = id;
+        this.user_id = id;
     }
 }

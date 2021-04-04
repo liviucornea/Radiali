@@ -43,6 +43,6 @@ import { Product } from '../shared/models';
         const  prod = Object.assign({}, product);
         delete prod.produs_id;
       return this.http.put(this.baseUrl + '/' + product.produs_id , prod, httpOptions);
-  }
+        }
 
     }

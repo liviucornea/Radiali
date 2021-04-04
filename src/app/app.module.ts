@@ -32,6 +32,7 @@ import { ProductsEditComponent } from './products-edit/products-edit.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginService } from './login/login.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -82,7 +83,7 @@ export function createTranslateLoader(http: HttpClient) {
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

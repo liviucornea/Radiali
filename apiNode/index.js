@@ -3,6 +3,7 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 const produseRouter = require('./routes/produse');
+const usersRouter = require('./routes/users');
 
 app.use(cors());
 
@@ -13,6 +14,7 @@ app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 
 app.use('/produse', produseRouter);
+app.use('/users', usersRouter);
 
 app.get("/", (req, res) => {
   res.json({ message: "ok" });

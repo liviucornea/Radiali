@@ -1,1 +1,28 @@
-<p>login works!</p>
+<form class="the-form"  [formGroup]="loginForm">
+    <div class="spinner-container" *ngIf="isLoading">
+      <mat-progress-spinner class="spinner"
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+      [value]="50">
+      </mat-progress-spinner>
+    </div>
+      <div class="row">
+          <mat-form-field class="item-half-width">
+              <mat-label>User</mat-label>
+              <input matInput formControlName="role">
+            </mat-form-field>
+            <mat-form-field class="product-half-width">
+                <mat-label>Parola</mat-label>
+                <input matInput placeholder="Parola" formControlName="password">
+              </mat-form-field>
+      </div>
+
+  
+      <mat-divider></mat-divider>
+      <div class="row-buttons">
+        <button mat-raised-button color="primary" (click)="doLogin()">Login</button>
+        <button mat-raised-button color="accent" (click)="doCancel()">Inapoi</button>
+      </div>
+      <h3>{{message}}</h3>
+    </form>
+  
