@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -35,6 +35,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginService } from './login/login.service';
 import { CanActivateUserGuard } from './app-routing/canActivatUserGuard';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -86,7 +87,9 @@ export function createTranslateLoader(http: HttpClient) {
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [ProductsService, LoginService, CanActivateUserGuard],
+  providers: [ProductsService, LoginService,
+    CanActivateUserGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

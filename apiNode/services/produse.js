@@ -2,6 +2,31 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
+async function verifyToken(request) {
+  const bearerHeader = request.headers['authorization'];
+  let page = 1;
+  if (bearerHeader) {
+    const bearer = bearerHeader.split(' ');
+    const bearerToken = bearer[1];
+    const offset = helper.getOffset(page, config.listPerPage);
+    const queryString =  `SELECT *
+    FROM users WHERE user_token = '` + bearerToken + `' LIMIT 1`;
+    const rows = await db.query(
+      queryString, 
+      [offset, config.listPerPage]
+    );
+    const data = helper.emptyOrRows(rows); 
+    const validationResult =  data.length > 0 ? true : false;
+    //console.log('Token ' + bearerToken + ' is: ', validationResult);
+    return validationResult;
+
+  } else {
+    // Forbidden
+    return false;
+  }
+
+
+}
 async function getMultiple(page = 1){
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
@@ -77,5 +102,6 @@ module.exports = {
   getMultiple,
   create,
   update,
-  remove
+  remove,
+  verifyToken
 }
