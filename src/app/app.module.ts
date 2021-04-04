@@ -33,6 +33,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginService } from './login/login.service';
+import { CanActivateUserGuard } from './app-routing/canActivatUserGuard';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -83,7 +84,7 @@ export function createTranslateLoader(http: HttpClient) {
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [ProductsService, LoginService],
+  providers: [ProductsService, LoginService, CanActivateUserGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

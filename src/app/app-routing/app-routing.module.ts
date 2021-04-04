@@ -7,6 +7,7 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 import { ProductsEditComponent } from '../products-edit/products-edit.component';
 import { ProductsComponent } from '../products/products.component';
 import { ServicesComponent } from '../services/services.component';
+import { CanActivateUserGuard } from './canActivatUserGuard';
 
 
 const routes: Routes = [
@@ -16,8 +17,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'services', component: ServicesComponent },
   {path: 'products', component: ProductsComponent},
-  { path: 'edit-product/:productId', component: ProductsEditComponent},
-  {path: '*.*', component: NotFoundComponent},
+  { path: 'edit-product/:productId', component: ProductsEditComponent,
+            canActivate: [CanActivateUserGuard] },
+  {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
