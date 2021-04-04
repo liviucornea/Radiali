@@ -34,6 +34,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginService } from './login/login.service';
 import { CanActivateUserGuard } from './app-routing/canActivatUserGuard';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -52,7 +53,8 @@ export function createTranslateLoader(http: HttpClient) {
     ServicesComponent,
     ProductsComponent,
     ProductsEditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

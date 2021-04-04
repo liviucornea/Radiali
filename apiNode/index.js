@@ -7,11 +7,11 @@ const usersRouter = require('./routes/users');
 
 app.use(cors());
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-const bp = require('body-parser')
-app.use(bp.json())
-app.use(bp.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// const bp = require('body-parser')
+// app.use(bp.json())
+// app.use(bp.urlencoded({ extended: true }))
 
 app.use('/produse', produseRouter);
 app.use('/users', usersRouter);
@@ -27,5 +27,5 @@ app.post('/book', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Radiali restAPI is listening at http://localhost:${port}`);
 });

@@ -136,7 +136,7 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.user.isLoggedIn) {
       this.router.navigateByUrl("/edit-product/" + productId);
     } else {
-      this.router.navigateByUrl("/notFound" );
+     // this.router.navigateByUrl("/notFound" );
     }
     
   }
