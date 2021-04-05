@@ -8,9 +8,12 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import { fromEvent, of, Subscription } from 'rxjs';
 import {
+  catchError,
   debounceTime,
   distinctUntilChanged,
-  map
+  filter,
+  map,
+  tap
 } from 'rxjs/operators';
 import { ProductsService } from './products.service';
 import { Router } from '@angular/router';
@@ -52,19 +55,28 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
      //this.productsList = products;
      this.displayedColumns = ['produs_id','nume', 'model', 'dimensiuni'];
      this.dataSource = new MatTableDataSource<Product>(this.productsList);
-     this.prodSubsc = this.prodSvc.getProductsList().subscribe( list => {
-       this.store.dispatch(loadProductsList({list: list.data}));
-       console.log('lis of products is', list);
-     });
      this.dataSource.paginator = this.paginator;
      this.dataSource.sort = this.sort;
-     this.storeSubsc = this.store.select('products').subscribe(
+     this.storeSubsc = this.store.select('products').
+     pipe(filter( prodState => prodState.loaded)).
+     subscribe(
       data => {
-        this.isLoading = false;
+          this.isLoading = false;
           this.productsList = data.productsLis;
           this.dataSource = new MatTableDataSource<Product>(this.productsList);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+      });
+      this.prodSubsc = this.prodSvc.getProductsList().
+      pipe(tap( () => this.isLoading = true),
+      catchError (err => {
+        console.error('Lista de produse nu poate fi incarcata');
+        return of([])
+      }))
+      .subscribe( productsFromAPi => {
+        const list = productsFromAPi.data ? productsFromAPi.data : []
+        this.store.dispatch(loadProductsList({list}));
+        console.log('lis of products is', list);
       });
       this.userSubs = this.store.select('user').subscribe( usr => this.user = usr);
   }
