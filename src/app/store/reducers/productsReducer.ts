@@ -9,7 +9,12 @@ const reduceForProducts = createReducer(
       return Object.assign({...productsState,
         loaded: true,
         productsLis: action.list});
-    }) 
+    }),
+    on(ProductsActions.loadProductsListError, (productsState: ProductsState, action) => {
+      
+      return Object.assign({...productsState,
+        loaded: true});
+    })
   );
   
   export function productsReducer(productsState: ProductsState | undefined, productsAction: Action) {

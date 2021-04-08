@@ -5,3 +5,7 @@ export const loadProductsList = createAction(
     '[Products] Load Products List',
     props<{ list: Product[] }>()
   );
+
+  export const loadProductsListError = createAction(
+    '[Products] Error Load Products List' 
+  );

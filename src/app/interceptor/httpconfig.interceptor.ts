@@ -23,7 +23,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                 const authReq = !!user.user_token ? request.clone({
                   setHeaders: { Authorization: 'Bearer ' + user.user_token },
                 }) : request;
-                console.log('Interceptor is triggered');
+               // console.log('Interceptor is triggered');
                 return next.handle(authReq);
               }),
             );

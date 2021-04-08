@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const app = express();
 const port = 3000;
+const hostname = '127.0.0.1';
 const produseRouter = require('./routes/produse');
 const usersRouter = require('./routes/users');
 
@@ -26,6 +27,6 @@ app.post('/book', (req, res) => {
   res.status(200).send('Book is added to the database');
 });
 
-app.listen(port, () => {
-  console.log(`Radiali restAPI is listening at http://localhost:${port}`);
+app.listen(port, hostname  , () => {
+  console.log(`Radiali restAPI is listening at http://${hostname}:${port}`);
 });
