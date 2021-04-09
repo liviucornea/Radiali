@@ -16,7 +16,7 @@ import { ProductsService } from './products.service';
 import { Router } from '@angular/router';
 import { AppState } from '../store/states/appStates';
 import { Store } from '@ngrx/store';
-import { loadProductsList, loadProductsListError } from '../store/actions/productsActions';
+import { loadProductsList, loadProductsListError, unLoadProductsList } from '../store/actions/productsActions';
 
 async function fetchProductsJSON() {
   const response = await fetch('../../assets/produse.json');
@@ -132,7 +132,7 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.userSubs) {
       this.userSubs.unsubscribe();
     }
-
+    this.store.dispatch(unLoadProductsList());
   }
   navigateToEditProduct( productId: string) {
     if (this.user.isLoggedIn) {
