@@ -17,8 +17,7 @@ const reduceForProducts = createReducer(
     //unLoadProductsList
     on(ProductsActions.unLoadProductsList, (productsState: ProductsState, action) => {  
       return Object.assign({...productsState,
-        loaded: false,
-        productsLis: []});
+        loaded: false});
     })
   );
   
