@@ -23,6 +23,7 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
   public productForm: FormGroup;
   public message = '';
   isSaving = false;
+  isAddingNew = false;
 
   constructor(public prodSvc: ProductsService, private route: ActivatedRoute,
     public store: Store<AppState>, private fb: FormBuilder,
@@ -60,16 +61,15 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
     this.productForm.get('description').setValue(product.description);
   }
 
-  createNewProduct() {
-    this.prodSvc.createProduct().subscribe( data => {
-      console.log('product is inserted');
-      }, error => { console.log(' error', error)});
-  }
   doSave() {
+    if (this.isAddingNew) {
+      this.createNewProd()
+      return;
+    }
     this.isSaving = true;
     const prod = this.productForm.getRawValue() as Product;
     this.prodSaveSubsc =this.prodSvc.updateProduct(prod).subscribe(result=>{
-      if(result.message) {
+      if (result.message) {
           this.message = "Produsul a fost salvat cu success";
       }
       console.log('Product is saved');
@@ -80,7 +80,31 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnDestroy () {
+  createNewProd() {
+    this.isSaving = true;
+    const prod = this.productForm.getRawValue() as Product;
+    prod.description = prod.description ? prod.description : ' ';
+    prod.dimensiuni = prod.dimensiuni ? prod.dimensiuni: ' ';
+    this.prodSaveSubsc =this.prodSvc.createProduct(prod).subscribe(result=>{
+      if(result.message) {
+          this.message = "Produsul a fost creeat cu success";
+      }
+      console.log('Product is saved');
+      this.isSaving = false;
+      this.isAddingNew = false;
+    }, err => {
+      this.message = "Produsul nu poate fi creeat momentan. Incercati mai tirziu";
+      this.isSaving = false;
+      this.isAddingNew = false;
+    })
+  }
+
+  addNew() {
+    this.isAddingNew = true;
+    let product = new Product('new');
+    this.populateForm(product);
+  }
+  ngOnDestroy() {
     if (this.productSubs) {
       this.productSubs.unsubscribe();
     }

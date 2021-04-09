@@ -8,10 +8,14 @@
     />
     <span>{{'HOME.TITLE' | translate}}</span>
       <div class="spacer"></div>
-      <a routerLink="login">
+      <a routerLink="login" *ngIf="!user.isLoggedIn">
         <span class="material-icons">account_circle</span>
-          <span *ngIf="user.isLoggedIn">{{ user.firstName + ' ' + user.lastName}}</span>
       </a>
+      <a *ngIf="user.isLoggedIn">
+        <span >{{ user.firstName + ' ' + user.lastName + '   ' }}</span>
+        <span class="material-icons" (click)="doLogout()" style="cursor: pointer;" >logout</span>   
+      </a>
+      
 
       <a aria-label="Radiali on twitter" target="_blank" rel="noopener" href="https://twitter.com/radiali" title="Twitter">
         <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">

@@ -27,8 +27,7 @@ export const logOutAction = createAction(
 );
 
 export const loggedOutAction = createAction(
-  '[User] User loggedOut',
-  props<{ user: User }>()
+  '[User] User loggedOut'
 );
 
 export const loginFailure = createAction(

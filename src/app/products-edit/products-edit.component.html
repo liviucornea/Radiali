@@ -8,11 +8,11 @@
   </div>
     <div class="row">
         <mat-form-field class="product-half-width">
-            <mat-label>Product  ID</mat-label>
+            <mat-label>Idul produsului</mat-label>
             <input matInput formControlName="produs_id">
           </mat-form-field>
           <mat-form-field class="product-half-width">
-              <mat-label>Product  Name</mat-label>
+              <mat-label>Numele produsului</mat-label>
               <input matInput placeholder="Nume Produs" formControlName="nume">
             </mat-form-field>
     </div>
@@ -41,6 +41,7 @@
     <div class="row-buttons">
       <button mat-raised-button color="accent" (click)="doCancel()">Inapoi</button>
       <button mat-raised-button color="primary" (click)="doSave()">Salveaza</button>
+      <button *ngIf="!isAddingNew" mat-raised-button color="primary" (click)="addNew()">Creeaza Produs</button>
     </div>
     <h3>{{message}}</h3>
   </form>

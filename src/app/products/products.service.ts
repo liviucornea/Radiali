@@ -22,14 +22,11 @@ import { Product } from '../shared/models';
         return this.http.get(this.baseUrl, httpOptions);
     }
 
-    createProduct(): Observable<any> {
+    createProduct(product: Product): Observable<any> {
         const httpOptions = {
             headers: new HttpHeaders({
               'Content-Type': 'application/json'
             })
-          };
-          const  product = {
-            "nume":"KUBOTA", "model": "KX 36","dimensiuni": "200x96x30 ", "description" :"200x96x30 "
           };
         return this.http.post(this.baseUrl, product, httpOptions);
     }

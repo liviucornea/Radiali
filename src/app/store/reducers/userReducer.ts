@@ -14,11 +14,13 @@ const reduceForUser = createReducer(
     return Object.assign({...userState}, user);
   }),
   on(UserActions.userSessionStarted, (userState: UserState, action) => {
+    localStorage.setItem('user', JSON.stringify(action.user));
     return Object.assign({...userState}, action.user);
   }),
   on(UserActions.guestUserLoaded, (userState: UserState, action) => {
     userState = new User('GUEST');
     userState.isLoaded = true;
+    localStorage.setItem('user', JSON.stringify(userState ));
     return userState;
   })
 );

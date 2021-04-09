@@ -50,17 +50,13 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
      //this.productsList = products;
+     this.displayedColumns = ['produs_id','nume', 'model', 'dimensiuni'];
      this.prodSubsc = this.prodSvc.getProductsList().subscribe( list => {
       this.store.dispatch(loadProductsList({list: list.data}));
       // console.log('lis of products is', list);
     }, err => {
       this.store.dispatch(loadProductsListError());
     });
-     this.displayedColumns = ['produs_id','nume', 'model', 'dimensiuni'];
-     this.dataSource = new MatTableDataSource<Product>(this.productsList);
-
-     this.dataSource.paginator = this.paginator;
-     this.dataSource.sort = this.sort;
      this.storeSubsc = this.store.select('products').subscribe(
       data => {
           if (!data.loaded){
