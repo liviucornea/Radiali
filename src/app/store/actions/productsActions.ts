@@ -9,3 +9,6 @@ export const loadProductsList = createAction(
   export const loadProductsListError = createAction(
     '[Products] Error Load Products List' 
   );
+  export const unLoadProductsList = createAction(
+    '[Products] UnLoad Products List' 
+  );

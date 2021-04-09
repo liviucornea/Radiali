@@ -63,7 +63,7 @@ export class ProductsComponent implements OnInit, AfterViewInit, OnDestroy {
             return;
           }
           this.isLoading = false;
-          this.productsList = data.productsLis;
+          this.productsList = [...data.productsLis];
           this.dataSource = new MatTableDataSource<Product>(this.productsList);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;

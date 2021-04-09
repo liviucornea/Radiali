@@ -10,10 +10,15 @@ const reduceForProducts = createReducer(
         loaded: true,
         productsLis: action.list});
     }),
-    on(ProductsActions.loadProductsListError, (productsState: ProductsState, action) => {
-      
+    on(ProductsActions.loadProductsListError, (productsState: ProductsState, action) => {  
       return Object.assign({...productsState,
         loaded: true});
+    }),
+    //unLoadProductsList
+    on(ProductsActions.unLoadProductsList, (productsState: ProductsState, action) => {  
+      return Object.assign({...productsState,
+        loaded: false,
+        productsLis: []});
     })
   );
   
