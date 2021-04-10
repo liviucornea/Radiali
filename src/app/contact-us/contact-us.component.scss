@@ -3,7 +3,13 @@
   max-width: 500px;
   width: 100%;
   margin: auto;
+  div:last-child {
+    margin-bottom: 20px;
+  }
 }
 .phone-nbr {
   color: blue;
+}
+.row {
+  margin-top: 20px;
 }
