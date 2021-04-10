@@ -21,8 +21,12 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   
 
   ngOnInit(): void {
-    this.menuSvcSubsc = this.menuSvc.showContentSubject.subscribe(signal => {
-      this.showContent = signal;
+    this.menuSvcSubsc = this.menuSvc.showContentSubject.subscribe(signalToOpen => {
+      if (this.showContent) {
+        this.showContent = false;
+      }else {
+        this.showContent = signalToOpen;
+      }
     });
     this.viePortSubsc = this.viewPortSvc.onResize$.subscribe(isMobile => {
       this.isMobile = isMobile;

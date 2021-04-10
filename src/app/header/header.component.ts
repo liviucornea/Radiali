@@ -62,17 +62,20 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     // credit to Timothy Huang for this regex test: 
     // https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      console.log('is mobile');
+      // console.log('is mobile');
         return true;
    }
    else{
-        console.log('is not mobile mobile');
+        // console.log('is not mobile mobile');
         return false;
         
    }
    
 }
 ngAfterViewInit() {
-  this.viewPortSvc.onResize(this.isMobile);
-}
+  setTimeout(()=> {
+    this.viewPortSvc.onResize(this.isMobile);
+  }, 300);
+    
+  }
 }
