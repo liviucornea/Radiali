@@ -85,7 +85,7 @@ async function create(produs){
 
   async function remove(id){
     const result = await db.query(
-      `DELETE FROM produse WHERE id=?`, 
+      `DELETE FROM produse WHERE produs_id=?`, 
       [id]
     );
   
@@ -93,6 +93,9 @@ async function create(produs){
   
     if (result.affectedRows) {
       message = 'Product deleted successfully';
+      console.log('Produs sters', result.affectedRows);
+    } else {
+      console.log('Produs nu e sters', result.affectedRows);
     }
   
     return {message};

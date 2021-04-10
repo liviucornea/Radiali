@@ -36,12 +36,13 @@ import { LoginService } from './login/login.service';
 import { CanActivateUserGuard } from './app-routing/canActivatUserGuard';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { DialogYesNoComponent } from './dialog-yesno/dialog-yesno.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
     ProductsEditComponent,
     NotFoundComponent,
     ContactUsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -80,6 +82,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatProgressSpinnerModule,
     MatButtonModule,
     MatDividerModule,
+    MatDialogModule,
     StoreModule.forRoot(reducersMap, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
@@ -89,7 +92,9 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   providers: [ProductsService, LoginService,
     CanActivateUserGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+    entryComponents: [DialogYesNoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

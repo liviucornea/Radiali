@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { DialogYesNoComponent } from '../dialog-yesno/dialog-yesno.component';
 import { ProductsService } from '../products/products.service';
 import { Product } from '../shared/models';
 import { AppState } from '../store/states/appStates';
@@ -20,6 +22,7 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
   private productsObs$ : Observable<any[]>;
   private productSubs: Subscription;
   private prodSaveSubsc: Subscription;
+  private dialogSubsc: Subscription;
   public productForm: FormGroup;
   public message = '';
   isSaving = false;
@@ -27,6 +30,7 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
 
   constructor(public prodSvc: ProductsService, private route: ActivatedRoute,
     public store: Store<AppState>, private fb: FormBuilder,
+    public dialog: MatDialog,
     private router: Router ) { }
 
   ngOnInit(): void {
@@ -104,6 +108,35 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
     let product = new Product('new');
     this.populateForm(product);
   }
+
+  doCallForDelete() {
+    const dialogRef = this.dialog.open(DialogYesNoComponent, {
+      width: '250px',
+      data: {intrebare: 'Confirmi stergerea', raspuns: 'No'}
+    });
+
+    this.dialogSubsc = dialogRef.afterClosed().subscribe(dialogResp => {
+      if (dialogResp) {
+        this.deleteProduct();
+      }
+  
+    });
+
+  }
+  deleteProduct() {
+    this.isSaving = true;
+    this.prodSaveSubsc = this.prodSvc.deleteProduct(this.productId).
+    subscribe(data=> {
+      this.isSaving = false;
+      this.message = "Produsul a fost sters. Veti fi redirectat la lista de produse";
+      setTimeout(() => {
+        this.router.navigateByUrl('/products');
+      }, 5000);
+    }, err => {
+      this.isSaving = false;
+      this.message = "Produsul nu poate fi sters. Incercati mai tirziu";
+    })
+  }
   ngOnDestroy() {
     if (this.productSubs) {
       this.productSubs.unsubscribe();
@@ -111,9 +144,14 @@ export class ProductsEditComponent implements OnInit, OnDestroy {
     if(this.prodSaveSubsc){
       this.prodSaveSubsc.unsubscribe();
     }
+    if(this.dialogSubsc){
+      this.dialogSubsc.unsubscribe();
+    }
   }
 
   doCancel() {
     this.router.navigateByUrl('/products');
   }
 }
+
+

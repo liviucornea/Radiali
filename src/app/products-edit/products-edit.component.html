@@ -41,7 +41,8 @@
     <div class="row-buttons">
       <button mat-raised-button color="accent" (click)="doCancel()">Inapoi</button>
       <button mat-raised-button color="primary" (click)="doSave()">Salveaza</button>
-      <button *ngIf="!isAddingNew" mat-raised-button color="primary" (click)="addNew()">Creeaza Produs</button>
+      <button mat-raised-button color="primary" (click)="doCallForDelete()">Sterge produs</button>
+      <button *ngIf="!isAddingNew" mat-raised-button color="primary" (click)="addNew()">Adauga produs</button>
     </div>
     <h3>{{message}}</h3>
   </form>

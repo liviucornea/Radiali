@@ -32,14 +32,24 @@ import { Product } from '../shared/models';
     }
     
     updateProduct(product: Product): Observable<any> {
-      const httpOptions = {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json'
-          })
-        };
-        const  prod = Object.assign({}, product);
-        delete prod.produs_id;
-      return this.http.put(this.baseUrl + '/' + product.produs_id , prod, httpOptions);
-        }
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type': 'application/json'
+            })
+          };
+          const  prod = Object.assign({}, product);
+          delete prod.produs_id;
+        return this.http.put(this.baseUrl + '/' + product.produs_id , prod, httpOptions);
+      }
+
+      deleteProduct(productId: string): Observable<any> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type': 'application/json'
+            })
+          };
+        return this.http.delete(this.baseUrl + '/' + productId, httpOptions);
+      }
+
 
     }
