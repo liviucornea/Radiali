@@ -1,15 +1,22 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
+  <div>
     <img
-      width="120"
-      height="40"
-      alt="Radiali"
-      src="/assets/images/radiali-logo.png"
-    />
-    <!-- <span>{{'HOME.TITLE' | translate}}</span> -->
-      <div><span class="material-icons"> perm_phone_msg </span>
+    width="120"
+    height="40"
+    alt="Radiali"
+    src="/assets/images/radiali-logo.png"
+  />
+
+  </div>
+
+
+      <div *ngIf="!isMobile"><span class="material-icons"> perm_phone_msg </span>
         <span class="phone-nbr">40.767.594.267</span></div>
-      <div class="spacer"></div>
+      <div class="spacer" *ngIf="!isMobile"></div>
+      <div id="menuIcon" *ngIf="isMobile" (click)="showMenu()">
+        <mat-icon>more_vert</mat-icon>
+      </div>
       <div routerLink="login" *ngIf="!user.isLoggedIn">
         <span class="material-icons">account_circle</span>
       </div>

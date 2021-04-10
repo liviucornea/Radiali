@@ -38,6 +38,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import { DialogYesNoComponent } from './dialog-yesno/dialog-yesno.component';
+import { ViewPortService } from './view-port.service';
+import { MenuServiceService } from './menu-service.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -91,7 +93,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
   ],
   providers: [ProductsService, LoginService,
-    CanActivateUserGuard,
+    CanActivateUserGuard, ViewPortService, MenuServiceService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
     entryComponents: [DialogYesNoComponent],
