@@ -33,8 +33,8 @@ p {
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
-  color: white;
+  background-color: #f2f5f8e7;
+  color: black;
   font-weight: 600;
   padding-right: 20px;
 }
@@ -56,4 +56,8 @@ p {
 .toolbar #twitter-logo:hover,
 .toolbar #youtube-logo:hover {
   opacity: 0.8;
+}
+.logIn-Icons {
+  display: flex;
+  justify-content: center;
 }

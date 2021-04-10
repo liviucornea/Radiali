@@ -3,7 +3,9 @@
       "TITLE": "Radiali, o companie de incredere",
       "SELECT": "Selectati limba",
       "SUB-TITLE": "Bine ati venit pe site-ul companiei Radiali.",
-      "MAIN-MSG": "Speram sa gasiti informatii utile pentru dvs. Va stam la dispozitie cu senile de cauciuc pentru aproape orice tip de miniexcavator existent pe piata. De asemenea, va putem furniza si elemente din trenul de antrenare, cum ar fi : role de tractiune, intinzatoare si role de sustinere. Daca este necesar, nu ezitati sa ne contactati, vom fi bucurosi sa va raspundem la intrebarile dvs., in cel mai scurt timp."
+      "MAIN-MSG": "Speram sa gasiti informatii utile pentru dvs. Va stam la dispozitie cu senile de cauciuc pentru aproape orice tip de miniexcavator existent pe piata.",
+      "MAIN-MSG_1": "De asemenea, va putem furniza si elemente din trenul de antrenare, cum ar fi : role de tractiune, intinzatoare si role de sustinere.",
+      "MAIN-MSG_2": "Daca este necesar, nu ezitati sa ne contactati, vom fi bucurosi sa va raspundem la intrebarile dvs., in cel mai scurt timp."
     },
     "MAIN-MENU": {
       "HOME": "Acasa",
@@ -13,7 +15,11 @@
      },
      "ABOUT": {
       "TITLE": "Despre noi",
-      "MSG": "Radiali srl are o mare varietate de șenile de cauciuc pentru mini excavatoare și mini încărcătoare, șenile de cauciuc din material de înaltă calitate. Senilele livrate beneficiaza de 1 an garanție, contra oricarui defect de fabricație. Senilele noastre din cauciuc, sunt fabricate cu cele mai moderne tehnologii și supuse celor mai stricte proceduri de control. Oferă o durată de viață mai lungă, transmit mai puține vibrații și mai puțin zgomot la rulare. Au amestecul potrivit de cauciuc, pentru o uzura redusa in timp si durata lunga de exploatare. Senilele contin cablurile de oțel, fir continuu, fără îmbinări pe ambele părți ale șenilelor de cauciuc ! Diverse profile si modele, în funcție de aplicație. Mărimi disponibile de la 150 mm la 900 mm lățimi. Pentru mai multe detalii despre instalarea și utilizarea senilelor de cauciuc, nu ezitati sa ne contactati. Vă vor oferi informațiile utile, în ceea ce privește modul de întindere a senilei si reguli de exploatare, pentru a reduce uzura prematura."
+      "MSG": "Radiali srl are o mare varietate de șenile de cauciuc pentru mini excavatoare și mini încărcătoare, șenile de cauciuc din material de înaltă calitate.",
+      "MSG_1": "Senilele livrate beneficiaza de 1 an garanție, contra oricarui defect de fabricație. Senilele noastre din cauciuc, sunt fabricate cu cele mai moderne tehnologii și supuse celor mai stricte proceduri de control.",
+      "MSG_2": "Oferă o durată de viață mai lungă, transmit mai puține vibrații și mai puțin zgomot la rulare. Au amestecul potrivit de cauciuc, pentru o uzura redusa in timp si durata lunga de exploatare. Senilele contin cablurile de oțel, fir continuu, fără îmbinări pe ambele părți ale șenilelor de cauciuc!",
+      "MSG_3": "Diverse profile si modele, în funcție de aplicație. Mărimi disponibile de la 150 mm la 900 mm lățimi.",
+      "MSG_4": "Pentru mai multe detalii despre instalarea și utilizarea senilelor de cauciuc, nu ezitati sa ne contactati. Vă vor oferi informațiile utile, în ceea ce privește modul de întindere a senilei si reguli de exploatare, pentru a reduce uzura prematura."
      },
     "SERVICES": {
       "TITLE": "Servicii",
