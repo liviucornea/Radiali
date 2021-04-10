@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {TranslateService} from '@ngx-translate/core';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -16,7 +16,7 @@ import { MenuServiceService } from '../menu-service.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   public user : User;
   public usrSubscription: Subscription;
   resizeObservable$: Observable<Event>;
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   changeLang(lang: string) {
     this.translate.use(lang);
   }
-  
+
   showMenu() {
     this.menuSvc.contentSignal(true);
   }
@@ -57,6 +57,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.usrSubscription.unsubscribe()
     }
   }
+
   get isMobile(){
     // credit to Timothy Huang for this regex test: 
     // https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
@@ -69,6 +70,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         return false;
         
    }
+   
 }
-
+ngAfterViewInit() {
+  this.viewPortSvc.onResize(this.isMobile);
+}
 }

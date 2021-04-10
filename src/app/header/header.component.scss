@@ -25,9 +25,9 @@ p {
   margin: 0;
 }
 
-.spacer {
-  flex: 1;
-}
+// .spacer {
+//   flex: 1;
+// }
 
 .toolbar {
   position: relative;
@@ -36,13 +36,18 @@ p {
   right: 0;
   height: 60px;
   display: flex;
+  justify-content: space-between ;
   align-items: center;
   background-color: #f2f5f8e7;
   color: black;
   font-weight: 600;
   padding-right: 20px;
 }
-
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 .toolbar img {
   margin: 0 16px;
 }

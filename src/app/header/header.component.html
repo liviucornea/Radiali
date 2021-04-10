@@ -5,12 +5,10 @@
     width="120"
     height="40"
     alt="Radiali"
-    src="/assets/images/radiali-logo.png"
-  />
+    src="/assets/images/radiali-logo.png"/>
 
   </div>
-
-
+  <div class="icons">
       <div *ngIf="!isMobile"><span class="material-icons"> perm_phone_msg </span>
         <span class="phone-nbr">40.767.594.267</span></div>
       <div class="spacer" *ngIf="!isMobile"></div>
@@ -20,7 +18,8 @@
       <div routerLink="login" *ngIf="!user.isLoggedIn">
         <span class="material-icons">account_circle</span>
       </div>
-      <div class="logIn-Icons" routerLink="login" *ngIf="user.isLoggedIn">
+      <div class="logIn-Icons" routerLink="login" *ngIf="user.isLoggedIn"
+      style="margin-left:20px">
         <span>{{ user.firstName + ' ' + user.lastName + '   ' }}</span>
         <span class="material-icons">account_circle</span> 
       </div>
@@ -45,6 +44,6 @@
         <span (click)="changeLang('en')" *ngIf="translate.currentLang==='ro'">EN</span>
         <span (click)="changeLang('ro')" *ngIf="translate.currentLang==='en'">RO</span>
       </div>
-      
+    </div>    
 
   </div>
