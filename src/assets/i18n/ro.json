@@ -41,18 +41,23 @@
       "MSG3_2": "Când vine vorba de teren agresiv / greu, șinele de oțel pot fi o opțiune mai bună.",
       "SUB-TITLE4": "Evitați contaminarea",
       "MSG4": "Produsele chimice, uleiul, sarea, precum și alte substanțe corozive pot determina deteriorarea cauciucului. Evitați aceste elemente dacă este posibil.",
-      "MSG4_1": "De asemenea, aveți grijă de uleiul și vaselina care se pot scurge de pe mașină pe șenilele de cauciuc. Dacă senilele de cauciuc sunt expuse la contactul cu oricare dintre aceste elemente, curățați-le imediat.",
-      "SUB-TITLE5": "",
-      "MSG5": "",
-      "SUB-TITLE6": "",
-      "MSG6": "",
-      "SUB-TITLE7": "",
-      "MSG7": ""
+      "MSG4_1": "De asemenea, aveți grijă de uleiul și vaselina care se pot scurge de pe mașină pe șenilele de cauciuc. Dacă senilele de cauciuc sunt expuse la contactul cu oricare dintre aceste elemente, curățați-le imediat."
     },
     "PRODUCTS": {
-      "TITLE": "Produse"
+      "TITLE": "Produse",
+      "PRODUCTS-LIST": "Lista de produse:",
+      "SEARCH-IN-LIST": "Cauta in lista de produse",
+      "MSG1": "Radiali va prezinta in tabelul de mai jos informatii ajutatoare pentru alegerea modelului de senila de cauciuc potrivita miniexcavatorului dvs.",
+      "MSG2": "Tastati in casuta de dialog “Cauta:” numele producatorului utilajului, apoi alegeti din lista, modelul dvs. de miniexcavator.",
+      "MSG3": "Daca intampinati probleme, va rugam sa ne contactati si vom fi bucurosi sa va ajutam !",
+      "MSG4": "In cazul transmiterii unei comenzi, va rugam sa precizati totdeauna si modelul de miniexcavator pentru care doriti sa achizitionati senilele, aceasta pentru a evita problemele care pot aparea ulterior privind alegerea nepotrivita a dimensiunilor senilelor."
     },
     "FOOTER": {
-      "LINK": "Link-uri utile"
+      "LINK": "Link-uri utile",
+      "CONTACT": "Contact"
+    },
+    "CONTACT-US": {
+      "CONTACT-INFO": "Informatii de contact:",
+      "PHONE": "Telefon: "
     }
   }

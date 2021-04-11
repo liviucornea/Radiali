@@ -3,39 +3,59 @@
       "TITLE": "Radiali",
       "SELECT": "Change language",
       "SUB-TITLE": "Welcome to the Radiali website.",
-      "MAIN-MSG": "We hope you find useful information for you. We are at your disposal with rubber tracks for almost any type of mini excavator on the market. We can also supply elements of the drive train, such as: traction rollers, tensioners and support rollers. If necessary, do not hesitate to contact us, we will be happy to answer your questions as soon as possible."
+      "MAIN-MSG": "We hope you find useful information for you. We are at your disposal with rubber tracks for almost any type of mini excavator on the market.",
+      "MAIN-MSG_1": "We can also supply elements of the drive train, such as: traction rollers, tensioners and support rollers.",
+      "MAIN-MSG_2": "If necessary, do not hesitate to contact us, we will be happy to answer your questions as soon as possible."
     },
     "MAIN-MENU": {
-      "HOME": "Home",
-      "ABOUT": "About",
-      "SERVICES": "Services",
-      "PRODUCTS": "Products"
+      "HOME": "HOME",
+      "ABOUT": "ABOUT",
+      "SERVICES": "SERVICES",
+      "PRODUCTS": "PRODUCTS"
      },
      "ABOUT": {
       "TITLE": "About",
-      "MSG": "Radiali srl has a wide variety of rubber tracks for mini excavators and mini loaders, rubber tracks made of high quality material. The delivered tracks benefit from a 1-year warranty, against any manufacturing defect. Our rubber tracks are manufactured with the most modern technologies and subject to the strictest control procedures. It offers a longer service life, transmits less vibration and less noise when driving. They have the right rubber mixture for reduced wear over time and long service life. The tracks contain the steel cables, continuous wire, without joints on both sides of the rubber tracks! Various profiles and models, depending on the application. Available sizes from 150 mm to 900 mm wide. For more details on the installation and use of rubber tracks, do not hesitate to contact us. They will provide you with useful information on how to stretch the track and operating rules to reduce premature wear."
-     },
+      "MSG": "Radiali srl has a wide variety of rubber tracks for mini excavators and mini loaders, rubber tracks made of high quality material. The delivered tracks benefit from a 1-year warranty, against any manufacturing defect. ",
+      "MSG_2": "Our rubber tracks are manufactured with the most modern technologies and subject to the strictest control procedures.",
+      "MSG_3": " It offers a longer service life, transmits less vibration and less noise when driving. They have the right rubber mixture for reduced wear over time and long service life. The tracks contain the steel cables, continuous wire, without joints on both sides of the rubber tracks! Various profiles and models, depending on the application. Available sizes from 150 mm to 900 mm wide.",
+      "MSG_4": "For more details on the installation and use of rubber tracks, do not hesitate to contact us. They will provide you with useful information on how to stretch the track and operating rules to reduce premature wear."
+
+    },
     "SERVICES": {
       "TITLE": "Service",
-      "SUB-TITLE1": "Maintenance of running track elements",
-      "MSG1": "If the running track elements (eg rollers, tensioner, gear) start to wear out, replace them promptly. If the teeth on the traction wheel are worn, they can remove the metal traction parts from the tracks, and the worn rollers can cut the running area of the track, causing serious damage. In addition, it is important to use a pressure washer to clean the runway. Failure to wash can damage the recoil mechanisms, which can break the steel cables in the track. We hope you find useful information for you. We are at your disposal with rubber tracks for almost any type of mini excavator on the market. We can also supply elements of the drive train, such as: traction rollers, tensioners and support rollers. If necessary, do not hesitate to contact us, we will be happy to answer your questions as soon as possible.",
+      "SUB-TITLE1": "Maintenance of track elements",
+      "MSG1": "If tread elements (eg roller, tensioner, gear) start to wear out, replace them promptly.",
+      "MSG1.1": "If the teeth on the traction wheel are worn, they may remove the metal traction parts from the tracks and the worn rollers may cut the running area of ​​the track, causing serious damage.",
+      "MSG1.2": "In addition, it is important to use a pressure washer to clean the running track.",
+      "MSG1.3": "Failure to wash may damage the recoil mechanisms, which may result in rupture of the steel cables in the track.",
+      "MSG1.4": "We hope you find useful information for you. We have rubber tracks available for almost any type of mini excavator on the market.",
+      "MSG1.5": "We can also supply you with elements of the drive train, such as: traction rollers, tensioners and support rollers.",
+      "MSG1.6": "If necessary, do not hesitate to contact us, we will be happy to answer your questions as soon as possible.",
       "SUB-TITLE2": "Avoid excessive stretching of the tracks",
-      "MSG2": "Always consult the manufacturer's manual for proper track tension, as machines of different sizes require different tension voltages! Check the voltage in the track every week. While some people believe that maintaining high blood pressure in the track will make it last longer, the result will be exactly the opposite! Some flexibility is required or the senile will react similarly to an over-inflated tire. In contrast, rubber tracks that are too weak can damage the parts around the track, the track can jump off the tensioner.",
-      "SUB-TITLE3": "Work surface",
-      "MSG3": "Remember that while rubber tracks will not pierce, like pneumatic tires, sharp objects should still be avoided! Sharp stones, pieces of crushed concrete, sharp metal objects can cause the rubber tracks to be cut, reducing the effectiveness of the track and, finally, the inner steel cables rusting on contact with water and can break. When it comes to aggressive / heavy terrain, steel tracks can be a better option.",
+      "MSG2": "Always consult the manufacturer's manual for proper track tension, as machines of different sizes require different tension voltages!",
+      "MSG2.1": "Check the voltage in the track every week. While some people think that keeping the voltage high in the track will make it last longer, the result will be exactly the opposite!",
+      "MSG2.2": "Some flexibility is required or the track will react similarly to an over-inflated tire. In contrast, rubber tracks that are too weak can damage the parts around the track, the track can jump from the tensioner. ",
+      "SUB-TITLE3": "Workspace",
+      "MSG3": "Remember that although the rubber rails will not pierce, like the pneumatic tires, sharp objects should still be avoided!",
+      "MSG3_1": "Sharp stones, pieces of crushed concrete, sharp metal objects can cause the rubber rails to be cut, reducing the effectiveness of the rail and, ultimately, the inner steel cables rusting on contact with water and breaking.",
+      "MSG3_2": "When it comes to aggressive / heavy terrain, steel rails may be a better option.",
       "SUB-TITLE4": "Avoid contamination",
-      "MSG4": "Chemicals, oil, salt, and other corrosive substances can damage the rubber. Avoid these items if possible. Also, beware of oil and grease that may leak from the car onto the rubber tracks. If the rubber tracks are exposed to contact with any of these items, clean them immediately.",
-      "SUB-TITLE5": "",
-      "MSG5": "",
-      "SUB-TITLE6": "",
-      "MSG6": "",
-      "SUB-TITLE7": "",
-      "MSG7": ""
-    },
+      "MSG4": "Chemicals, oil, salt and other corrosive substances may cause damage to the rubber. Avoid these elements if possible.",
+      "MSG4_1": "Also take care of oil and grease that may leak from the car on the rubber tracks. If the rubber tracks are exposed to contact with any of these elements, clean them immediately."    },
     "PRODUCTS": {
-      "TITLE": "Products"
-    },
+      "TITLE": "Products",
+      "PRODUCTS-LIST": "List of products:",
+      "SEARCH-IN-LIST": "Search in the list of products",
+      "MSG1": "Radiali presents in the table below helpful information for choosing the right rubber track model for your mini excavator",
+      "MSG2": "In the 'Search: ' dialog box, type the name of the machine manufacturer, then choose your mini excavator model from the list.",
+      "MSG3": "If you have any problems, please contact us and we will be happy to help you!",
+      "MSG4": "In case of sending an order, please always specify the model of mini excavator for which you want to purchase the tracks, this in order to avoid the problems that may appear later regarding the inappropriate choice of the track dimensions."    },
     "FOOTER": {
-      "LINK": "Important links"
+      "LINK": "Important links",
+      "CONTACT": "Contact"
+    },
+    "CONTACT-US": {
+      "CONTACT-INFO": "Contact Info:",
+      "PHONE": "Phone: "
     }
   }
