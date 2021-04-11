@@ -8,10 +8,10 @@
       "MAIN-MSG_2": "Daca este necesar, nu ezitati sa ne contactati, vom fi bucurosi sa va raspundem la intrebarile dvs., in cel mai scurt timp."
     },
     "MAIN-MENU": {
-      "HOME": "Acasa",
-      "ABOUT": "Despre noi",
-      "SERVICES": "Servicii",
-      "PRODUCTS": "Produse"
+      "HOME": "ACASA",
+      "ABOUT": "DESPRE NOI",
+      "SERVICES": "SERVICII",
+      "PRODUCTS": "PRODUSE"
      },
      "ABOUT": {
       "TITLE": "Despre noi",

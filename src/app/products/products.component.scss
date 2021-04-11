@@ -37,7 +37,12 @@ table {
 }
 .navigate-cell {
   cursor: pointer;
+  color: #08c;
 }
+.navigate-cell:hover {
+  text-decoration: underline;
+}
+
 th.mat-sort-header-sorted {
   color: black;
 }

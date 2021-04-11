@@ -48,6 +48,10 @@ svg.material-icons:not(:last-child) {
   align-items: center;
   transition: all 0.2s ease-in-out;
   line-height: 24px;
+  font-family: Open Sans,sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #08c;
 }
 
 .card-container .card:not(:last-child) {
@@ -63,7 +67,8 @@ svg.material-icons:not(:last-child) {
   cursor: pointer;
 }
 .activeLink.activeLink {
-  background-color: rgb(95, 95, 241);
+  background-color: #08c;
+  color: #fafafa;
 }
 
 .card-container .card:not(.highlight-card):hover {
