@@ -11,7 +11,8 @@
       "HOME": "ACASA",
       "ABOUT": "DESPRE NOI",
       "SERVICES": "SERVICII",
-      "PRODUCTS": "PRODUSE"
+      "PRODUCTS": "PRODUSE",
+      "CONTACT": "CONTACT"
      },
      "ABOUT": {
       "TITLE": "Despre noi",
@@ -59,5 +60,12 @@
     "CONTACT-US": {
       "CONTACT-INFO": "Informatii de contact:",
       "PHONE": "Telefon: "
+    },
+    "LOGIN": {
+        "HEADER-TITLE" : "Introduceti userul si parola:"
+    },
+    "BUTTONS" : {
+      "LOGIN": "Loghineaza-ma",
+      "BACK": "Inapoi"
     }
   }

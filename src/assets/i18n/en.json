@@ -11,7 +11,8 @@
       "HOME": "HOME",
       "ABOUT": "ABOUT",
       "SERVICES": "SERVICES",
-      "PRODUCTS": "PRODUCTS"
+      "PRODUCTS": "PRODUCTS",
+      "CONTACT": "CONTACT"
      },
      "ABOUT": {
       "TITLE": "About",
@@ -57,5 +58,12 @@
     "CONTACT-US": {
       "CONTACT-INFO": "Contact Info:",
       "PHONE": "Phone: "
-    }
+    },
+    "LOGIN": {
+      "HEADER-TITLE" : "Enetr user name and password"
+      },
+  "BUTTONS" : {
+        "LOGIN": "Loghineaza-ma",
+        "BACK": "Back"
+          }
   }

@@ -6,6 +6,8 @@
       [value]="50">
       </mat-progress-spinner>
     </div>
+    <span>{{"LOGIN.HEADER-TITLE" | translate}} </span>
+    <mat-divider></mat-divider>
       <div class="row">
           <mat-form-field class="item-half-width">
               <mat-label>User</mat-label>
@@ -16,12 +18,10 @@
                 <input matInput placeholder="Parola" formControlName="password">
               </mat-form-field>
       </div>
-
-  
       <mat-divider></mat-divider>
       <div class="row-buttons">
-        <button mat-raised-button color="primary" (click)="doLogin()">Login</button>
-        <button mat-raised-button color="accent" (click)="doCancel()">Inapoi</button>
+        <button mat-raised-button color="primary" (click)="doLogin()">{{"BUTTONS.LOGIN" | translate}}</button>
+        <button mat-raised-button color="accent" (click)="doCancel()">{{"BUTTONS.LOGIN" | translate}}</button>
       </div>
       <h3>{{message}}</h3>
     </form>
