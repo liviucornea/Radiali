@@ -63,7 +63,7 @@
       "HEADER-TITLE" : "Enetr user name and password"
       },
   "BUTTONS" : {
-        "LOGIN": "Loghineaza-ma",
+        "LOGIN": "Login",
         "BACK": "Back"
           }
   }
