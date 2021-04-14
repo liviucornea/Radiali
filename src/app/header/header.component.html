@@ -15,7 +15,8 @@
       </div>
       <div class="spacer" *ngIf="!isMobile"></div>
       <div id="menuIcon" *ngIf="isMobile" (click)="showMenu()">
-        <mat-icon>more_vert</mat-icon>
+        <!-- <mat-icon>more_vert</mat-icon> -->
+        <mat-icon>menu</mat-icon>
       </div>
       <div routerLink="login" *ngIf="!user.isLoggedIn" style="margin-left:10px">
         <span class="material-icons" style="cursor: pointer;">account_circle</span>

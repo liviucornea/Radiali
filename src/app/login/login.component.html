@@ -1,4 +1,5 @@
-<form class="the-form"  [formGroup]="loginForm">
+<div class="the-form">
+<form  [formGroup]="loginForm">
     <div class="spinner-container" *ngIf="isLoading">
       <mat-progress-spinner class="spinner"
       [color]="'primary'"
@@ -6,7 +7,10 @@
       [value]="50">
       </mat-progress-spinner>
     </div>
-    <span>{{"LOGIN.HEADER-TITLE" | translate}} </span>
+    <div  class="title">
+      <span>{{"LOGIN.HEADER-TITLE" | translate}} </span>
+    </div>
+
     <mat-divider></mat-divider>
       <div class="row">
           <mat-form-field class="item-half-width">
@@ -25,4 +29,4 @@
       </div>
       <h3>{{message}}</h3>
     </form>
-  
+  </div>

@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
 ngAfterViewInit() {
   setTimeout(()=> {
     this.viewPortSvc.onResize(this.isMobile);
-  }, 300);
+  }, 100);
     
   }
 }
