@@ -40,6 +40,7 @@ import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dia
 import { DialogYesNoComponent } from './dialog-yesno/dialog-yesno.component';
 import { ViewPortService } from './view-port.service';
 import { MenuServiceService } from './menu-service.service';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -85,6 +86,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatButtonModule,
     MatDividerModule,
     MatDialogModule,
+    NgxCaptchaModule,
     StoreModule.forRoot(reducersMap, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({

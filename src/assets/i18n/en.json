@@ -60,7 +60,7 @@
       "PHONE": "Phone: "
     },
     "LOGIN": {
-      "HEADER-TITLE" : "Enetr user name and password"
+      "HEADER-TITLE" : "Enter user name and password"
       },
   "BUTTONS" : {
         "LOGIN": "Login",

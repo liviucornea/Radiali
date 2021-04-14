@@ -10,23 +10,42 @@
     <div  class="title">
       <span>{{"LOGIN.HEADER-TITLE" | translate}} </span>
     </div>
-
-    <mat-divider></mat-divider>
-      <div class="row">
-          <mat-form-field class="item-half-width">
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+    <div class="row">
+            <mat-form-field class="item-half-width">
               <mat-label>User</mat-label>
               <input matInput formControlName="role">
             </mat-form-field>
             <mat-form-field class="product-half-width">
                 <mat-label>Parola</mat-label>
                 <input matInput placeholder="Parola" formControlName="password">
-              </mat-form-field>
-      </div>
+            </mat-form-field>
+            <ngx-recaptcha2 #captchaElem
+            [siteKey]="siteKey"
+            [useGlobalDomain]="false"
+            [size]="size"
+            [hl]="language"
+            formControlName="recaptcha">
+          </ngx-recaptcha2>
+    </div>
+    <div  class="divider">
       <mat-divider></mat-divider>
+    </div>
+    <div>
+        <div  [ngClass]="{message: true, error:formHasErrors}">
+          <span>{{message}}</span>
+        </div>
+        <div class="divider">
+          <mat-divider *ngIf="formHasErrors || message"></mat-divider>
+        </div>
+        
+    </div>
       <div class="row-buttons">
         <button mat-raised-button color="primary" (click)="doLogin()">{{"BUTTONS.LOGIN" | translate}}</button>
         <button mat-raised-button color="accent" (click)="doCancel()">{{"BUTTONS.BACK" | translate}}</button>
       </div>
-      <h3>{{message}}</h3>
-    </form>
+      
+  </form>
   </div>

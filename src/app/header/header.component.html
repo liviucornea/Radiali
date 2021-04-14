@@ -21,7 +21,7 @@
       <div routerLink="login" *ngIf="!user.isLoggedIn" style="margin-left:10px">
         <span class="material-icons" style="cursor: pointer;">account_circle</span>
       </div>
-      <div class="logIn-Icons" routerLink="login" *ngIf="user.isLoggedIn" style="margin-left:20px">
+      <div class="logIn-Icons" *ngIf="user.isLoggedIn" style="margin-left:20px">
         <div class="icon-and-text">
           <span class="text">{{ user.firstName + ' ' + user.lastName + '   ' }}</span>
           <span class="material-icons">account_circle</span> 
